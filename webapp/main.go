@@ -35,13 +35,6 @@ func main() {
 		panic(err)
 	}
 
-	// sample data
-	_, err = db.Exec(`INSERT INTO tweets (body)
-  VALUES ('hello world');`)
-	if err != nil {
-		panic(err)
-	}
-
 	// HTTP
 	tweetsHandler := &tweets.Handler{
 		PG: db,
